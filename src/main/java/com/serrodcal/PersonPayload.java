@@ -20,10 +20,10 @@ public class PersonPayload {
     }
 
     public void setStatus(String status) {
-        if (status.equalsIgnoreCase("alive")) {
-            this.status = Status.LIVING;
-        } else {
+        if (status.equalsIgnoreCase("deceased")) {
             this.status = Status.DECEASED;
+        } else {
+            this.status = Status.LIVING;
         }
     }
 }

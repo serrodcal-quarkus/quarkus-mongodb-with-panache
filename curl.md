@@ -5,3 +5,5 @@
 > curl http://localhost:8080/person/sergio -w '\n' -i
 
 > curl http://localhost:8080/person/alive -w '\n' -i
+
+> curl -X DELETE http://localhost:8080/person/sergio -w '\n' -i

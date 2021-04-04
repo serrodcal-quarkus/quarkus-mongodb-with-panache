@@ -17,7 +17,7 @@ public class PersonService {
     }
 
     public Uni<Person> findByName(String name) {
-        return this.repository.findByName(name.toUpperCase());
+        return this.repository.findByName(name);
     }
 
     public Uni<List<Person>> findAlive() {
@@ -27,6 +27,10 @@ public class PersonService {
     public Uni<Void> createPerson(PersonDTO personDTO) {
         Person person = new Person(personDTO.name, personDTO.birth, personDTO.status);
         return this.repository.persist(person);
+    }
+
+    public Uni<Long> deletePerson(String name) {
+        return this.repository.delete("name", name);
     }
 
 }

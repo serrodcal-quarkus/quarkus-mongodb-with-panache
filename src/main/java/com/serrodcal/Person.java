@@ -11,8 +11,8 @@ import java.time.LocalDate;
 public class Person extends ReactivePanacheMongoEntity {
 
     public String name;
-    @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     public LocalDate birth;
     public Status status;
 
@@ -25,13 +25,13 @@ public class Person extends ReactivePanacheMongoEntity {
     }
 
     // return name as uppercase in the model
-    public String getName(){
+    /*public String getName(){
         return name.toUpperCase();
-    }
+    }*/
 
     // store all names in lowercase in the DB
-    public void setName(String name){
+    /*public void setName(String name){
         this.name = name.toLowerCase();
-    }
+    }*/
 
 }
